@@ -89,7 +89,11 @@ export const updateRecipeSchema = z.object({
     .string({ invalid_type_error: "Category ID must be a string" })
     .uuid("Category ID must be a valid UUID")
     .optional(),
-  ingredients: z.array(ingredientSchema).refine(lookingForDublikats).optional(),
+  ingredients: z
+  .array(ingredientSchema)
+  .min(1, "A recipe needs at least one ingredient")
+  .refine(lookingForDublikats)
+  .optional(),
 });
 
 export const recipeIdParamSchema = z.object({

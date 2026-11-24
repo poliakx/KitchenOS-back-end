@@ -222,6 +222,40 @@ describe("recipes API (integration) ", () => {
 
     expect(res.statusCode).toBe(400)
   })
+
+  
+  it("PUT/api/recipe/:id -- user send empty ingredients array --> 400", async () => {
+      const token = await createAdmin();
+
+      const product = await createProduct(token)
+      const productId = product.body.data.id
+
+      const recipe = {
+        name: "test name",
+        ingredients: [
+          { 
+          productId,
+          quantity: 100
+        }
+        ]
+      }
+
+      const newRecipe = await api
+        .post("/api/recipes")
+        .set("Authorization", `Bearer ${token}`)
+        .send(recipe)
+
+      const id = newRecipe.body.data.id
+
+      const res = await api
+      .put(`/api/recipes/${id}`)
+      .set("Authorization", `Bearer ${token}`)
+      .send({ingredients: []})
+
+      expect(res.statusCode).toBe(400)
+      expect(res.body.errors[0].message).toBe("A recipe needs at least one ingredient")
+    });
+
 })
 
  

@@ -1,6 +1,5 @@
 import { getExecutor } from "../db/executor.js";
-import {
-  qGetAll,
+ import {qGetAll,
   qGetIngredientsByRecipeIds,
   qCountRecipes,
   qFindRecipeById,
@@ -91,6 +90,7 @@ export const recipesRepository = {
   },
 
   async replaceIngredients(recipeId, ingredients, db = null) {
+    if(ingredients.length === 0) throw new Error("replaceIngredients: expected a non-empty ingredients array")
     const executor = getExecutor(db);
     await executor.query(qDeleteIngredientsByRecipeId, [recipeId]);
 
