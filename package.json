@@ -39,7 +39,7 @@
     ]
   },
   "main": "src/server.js",
-  "name": "inventory-app-ai-backend",
+  "name": "kitchenos-back-end",
   "private": true,
   "scripts": {
     "dev": "dotenv -e .env.dev -- cross-env NODE_ENV=development nodemon --legacy-watch src/server.js",
