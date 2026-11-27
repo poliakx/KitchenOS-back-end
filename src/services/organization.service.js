@@ -1,4 +1,4 @@
-import { NotFoundError } from "../errors/base.error.js";
+import { NotFoundError } from "../errors/classes/http/http.errors.js";
 import { organizationRepository } from "../repositories/organizations.repository.js";
 import { getOrganizationId } from "../shared/auth/getOrganizationId.js";
 

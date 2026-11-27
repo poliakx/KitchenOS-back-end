@@ -1,4 +1,4 @@
-import { ValidationError } from "../../errors/base.error.js"
+import { ValidationError } from "../../errors/classes/http/http.errors.js"
 
 export const getOrganizationId = (user) => {
   if(!user?.organization_id){

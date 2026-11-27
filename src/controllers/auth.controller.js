@@ -1,5 +1,5 @@
 import { env } from "../config/env.js";
-import { TokenMissingError } from "../errors/autorization/authErrors.js";
+import { TokenMissingError } from "../errors/classes/authorization/auth.errors.js";
 import { asyncHandler } from "../middleware/api/async-handler.middleware.js";
 import { authService } from "../services/auth.service.js";
 

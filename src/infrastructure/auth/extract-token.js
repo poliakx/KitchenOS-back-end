@@ -1,4 +1,4 @@
-import { AuthError } from "../../errors/autorization/authErrors.js"
+import { AuthError } from "../../errors/classes/authorization/auth.errors.js"
 
 export const extractToken = (req) => {
   const authHeader = req.headers.authorization;

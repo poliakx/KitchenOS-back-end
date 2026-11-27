@@ -1,4 +1,4 @@
-import { NotFoundError, ValidationError } from "../errors/base.error.js";
+import { NotFoundError, ValidationError } from "../errors/classes/http/http.errors.js";
 import { recipesRepository } from "../repositories/recipes.repository.js";
 import { getOrganizationId } from "../shared/auth/getOrganizationId.js";
 import { transactionFunc } from "../db/transaction.js";

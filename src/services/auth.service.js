@@ -3,12 +3,12 @@ import { userRepository } from "../repositories/user.repository.js";
 import { organizationRepository } from "../repositories/organizations.repository.js";
 import { refreshTokenRepository } from "../repositories/token.repository.js";
 import { hashRefreshToken } from "../infrastructure/auth/helpers/tokenHash.js";
-import { NotFoundError, ConflictError } from "../errors/base.error.js";
+import { NotFoundError, ConflictError } from "../errors/classes/http/http.errors.js";
 import {
   InvalidCredentialsError,
   TokenReuseDetectedError,
   InvalidTokenError,
-} from "../errors/autorization/authErrors.js";
+} from "../errors/classes/authorization/auth.errors.js";
 import { signAccessToken, signRefreshToken } from "../infrastructure/auth/tokens.js";
 import { verifyRefreshToken } from "../infrastructure/auth/verify-jwt-token.js";
 import { transactionFunc } from "../db/transaction.js";
