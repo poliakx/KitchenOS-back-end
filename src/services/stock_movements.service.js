@@ -2,11 +2,11 @@ import { transactionFunc } from "../db/transaction.js";
 import { getOrganizationId } from "../shared/auth/getOrganizationId.js";
 import { productsRepository } from "../repositories/products.repository.js";
 import { stockMovementsRepository } from "../repositories/stock_movement.repository.js";
-import { NotFoundError } from "../errors/base.error.js";
+import { NotFoundError } from "../errors/classes/http/http.errors.js";
 import {
   InsufficientStockError,
   InvalidMovementTypeError,
-} from "../errors/stock-movements/stockMovementErrors.js";
+} from "../errors/classes/stock-movements/stockMovement.errors.js";
 
 export const stockMovementsService = {
   createStockMovement: async (data, user) => {

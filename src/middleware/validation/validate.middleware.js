@@ -1,4 +1,4 @@
-import { ValidationError } from "../../errors/base.error.js";
+import { ValidationError } from "../../errors/classes/http/http.errors.js";
 
 export const validate = (schema, source = "body") => (req, _res, next) => {
   const result = schema.safeParse(req[source]);

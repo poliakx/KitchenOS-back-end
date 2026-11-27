@@ -1,5 +1,5 @@
 
-import { NotFoundError, ValidationError } from "../errors/base.error.js";
+import { NotFoundError, ValidationError } from "../errors/classes/http/http.errors.js";
 import { categoryRepository } from "../repositories/category.repository.js";
 import { getOrganizationId } from "../shared/auth/getOrganizationId.js";
 

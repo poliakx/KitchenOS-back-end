@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken"
 import {env} from "../../config/env.js"
-import { AuthError } from "../../errors/autorization/authErrors.js"
+import { AuthError } from "../../errors/classes/authorization/auth.errors.js"
 
 export const verifyAccessToken = (token) =>{
   if(!env.JWT_ACCESS_SECRET){

@@ -1,5 +1,5 @@
 import { logger } from "../../config/logger.js";
-import { ValidationError } from "../../errors/base.error.js";
+import { ValidationError } from "../../errors/classes/http/http.errors.js";
 
  //23503 = NO ACTION, 23001 = RESTRICT the same situation that why we checked both
 const CONSTRAINT_MESSAGES = {

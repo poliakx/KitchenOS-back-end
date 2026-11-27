@@ -1,4 +1,4 @@
-import { AuthError } from "../../errors/autorization/authErrors.js";
+import { AuthError } from "../../errors/classes/authorization/auth.errors.js";
 import { extractToken } from "../../infrastructure/auth/extract-token.js";
 import { verifyAccessToken } from "../../infrastructure/auth/verify-jwt-token.js";
 
